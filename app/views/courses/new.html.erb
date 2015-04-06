@@ -1,4 +1,4 @@
-<%= form_for @course, :url => { :controller => 'courses', :action => 'search' } do |f| %>
+<%= form_for @course, :url => { :controller => 'courses', :action => 'create' } do |f| %>
 
 
     <%= f.label :name, "Name" %>
@@ -16,5 +16,5 @@
     <%= f.label :credit, "Credit"%>
     <%= f.text_field :credit%>
 
-    <%= f.submit "Search" %>
+    <%= f.submit "New course" %>
 <% end %>

@@ -1,0 +1,19 @@
+<%= form_for @course, :url => { :controller => 'courses', :action => 'update', :id => @course } do |f| %>
+    <%= f.label :name, "Name" %>
+    <%= f.text_field :name %>
+
+    <%= f.label :teacher, "Teacher" %>
+    <%= f.text_field :teacher %>
+
+    <%= f.label :classroom, "Classroom" %>
+    <%= f.text_field :classroom %>
+
+    <%= f.label :time, "Time"%>
+    <%= f.text_field :time%>
+
+    <%= f.label :credit, "Credit"%>
+    <%= f.text_field :credit%>
+
+    
+    <%= f.submit "Update" %>
+<% end %>

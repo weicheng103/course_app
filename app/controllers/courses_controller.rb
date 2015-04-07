@@ -1,6 +1,20 @@
 class CoursesController < ApplicationController
 	def index
-		@courses = Course.all		
+		@courses = Course.all
+
+		if params[:name].present?
+			@courses = @courses.where("name like ?","%#{params[:name]}%")
+		end	
+
+		if params[:teacher].present?
+			@courses = @courses.where("teacher like ?","%#{params[:teacher]}%")
+		end	
+
+		if params[:time].present?
+			@courses = @courses.where("time like ?","%#{params[:time]}%")
+		end	
+
+
 	end
 
 	def new
@@ -37,7 +51,8 @@ class CoursesController < ApplicationController
 	end
 
 	def search
-		@course = Course.find(params[:name, :teacher, :time])
+		@course = Course.where(:name => :name_s)
+	
 	end
 
  	private
